@@ -14,18 +14,17 @@ const Navbar = () => {
                 <img src={Logo} alt="" className='w-12 h-12' />
             </div>
             <div className='w-full lg:w-fit flex justify-center gap-4 lg:gap-7'>
-                <p className='text-base text-gray-500 font-pp-supply-mono'>HOME</p>
-                <p className='text-base text-gray-500 font-pp-supply-mono'>ABOUT</p>
-                <p className='text-base text-gray-500 font-pp-supply-mono'>TOKENOMICS</p>
-                <p className='text-base text-gray-500 font-pp-supply-mono'>BUY</p>
-                <p className='text-base text-gray-500 font-pp-supply-mono'>NOW</p>
+                <a href='#home' className='text-base text-gray-500 font-pp-supply-mono hover:text-orange-500 transition-all duration-300'>HOME</a>
+                <a href='#about' className='text-base text-gray-500 font-pp-supply-mono hover:text-orange-500 transition-all duration-300'>ABOUT</a>
+                <a href='#tokenomics' className='text-base text-gray-500 font-pp-supply-mono hover:text-orange-500 transition-all duration-300'>TOKENOMICS</a>
+                <a href='#buynow' className='text-base text-gray-500 font-pp-supply-mono hover:text-orange-500 transition-all duration-300'>BUY NOW</a>
             </div>
             <div className='w-full lg:w-fit flex justify-center items-center gap-5'>
 
-                <RiOpenaiFill className='text-xl text-gray-500' />
-                <FaXTwitter className='text-xl text-gray-500' />
-                <FaTelegramPlane className='text-xl text-gray-500' />
-                
+                <RiOpenaiFill className='text-xl text-gray-500 hover:text-orange-500 transition-all duration-300 hover:cursor-pointer' />
+                <FaXTwitter className='text-xl text-gray-500 hover:text-orange-500 transition-all duration-300 hover:cursor-pointer' />
+                <FaTelegramPlane className='text-xl text-gray-500 hover:text-orange-500 transition-all duration-300 hover:cursor-pointer' />
+
             </div>
         </div>
     )

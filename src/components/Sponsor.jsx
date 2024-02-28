@@ -2,6 +2,10 @@ import React from 'react'
 import Sponsor1 from '../assets/image/sponsors/1.webp'
 import Sponsor2 from '../assets/image/sponsors/2.webp'
 import Sponsor3 from '../assets/image/sponsors/3.webp'
+import Sponsor4 from '../assets/image/sponsors/4.webp'
+
+import SponsorImage from './SponsorImage'
+import { motion } from 'framer-motion'
 
 const sponsorImage = [
     {
@@ -16,12 +20,40 @@ const sponsorImage = [
         image: Sponsor3,
         title: 'MAESTRO'
     },
+    {
+        image: Sponsor4,
+        title: '1INCH'
+    },
+
 ]
 
 const Sponsor = () => {
     return (
-        <div className='w-full pb-10 flex flex-col gap-10'>
-            <marquee direction="left" scrollamount="7" className=' w-full overflow-hidden flex gap-5'>
+        <div className='w-full xl:w-1/2 mx-auto pb-10 flex flex-col gap-10'>
+            <motion.marquee
+
+                initial={{
+                    opacity: 0,
+                    x: -250
+                }}
+
+                animate={{
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                        duration: .5,
+                    }
+                }}
+
+                direction="left" scrollamount="10" className=' w-full overflow-hidden flex gap-5'>
+
+                {sponsorImage.map((sponsor, index) => (
+                    <SponsorImage key={index} image={sponsor.image} title={sponsor.title} />
+                ))}
+
+            </motion.marquee>
+
+            <marquee direction="right" scrollamount="10" className=' w-full overflow-hidden flex gap-5'>
 
                 {sponsorImage.map((sponsor, index) => (
                     <SponsorImage key={index} image={sponsor.image} title={sponsor.title} />
@@ -29,28 +61,6 @@ const Sponsor = () => {
                 ))}
 
             </marquee>
-
-            <marquee direction="right" scrollamount="7" className=' w-full overflow-hidden flex gap-5'>
-
-                {sponsorImage.map((sponsor, index) => (
-                    <SponsorImage key={index} image={sponsor.image} title={sponsor.title} />
-
-                ))}
-
-            </marquee>
-        </div>
-    )
-}
-
-const SponsorImage = ({ image, title }) => {
-    return (
-        <div className='w-72 h-64 border border-slate-200/15 bg-black rounded-lg mx-3 inline-block py-5'>
-            <div className='w-full h-32' style={{ backgroundImage: `url(${image})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
-
-            </div>
-            <div className='w-full h-24 flex justify-center items-center'>
-                <p className='text-slate-300 font-pp-supply-mono-medium text-3xl'>{title}</p>
-            </div>
         </div>
     )
 }
