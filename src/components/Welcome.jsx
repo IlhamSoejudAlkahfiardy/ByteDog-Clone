@@ -12,8 +12,6 @@ import Dog3 from '../assets/image/dog3.webp'
 import Dog4 from '../assets/image/dog4.jpg'
 import Dog5 from '../assets/image/dog5.webp'
 
-import { shuffle } from 'txt-shuffle';
-
 const Welcome = ({ copyToClipboard }) => {
     const heroImage = [Dog1, Dog2, Dog3, Dog4, Dog5]
 
