@@ -12,7 +12,7 @@ const Tokenomics = () => {
                     y: 250
                 }}
 
-                animate={{
+                whileInView={{
                     opacity: 1,
                     y: 0,
                     transition: {
@@ -44,7 +44,7 @@ const Tokenomics = () => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -64,7 +64,7 @@ const Tokenomics = () => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -84,7 +84,7 @@ const Tokenomics = () => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -104,7 +104,7 @@ const Tokenomics = () => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -124,7 +124,7 @@ const Tokenomics = () => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -144,7 +144,7 @@ const Tokenomics = () => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -166,7 +166,7 @@ const Tokenomics = () => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {

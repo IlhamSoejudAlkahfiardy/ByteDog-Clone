@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 // icons
 import { FaArrowRight } from "react-icons/fa";
+import { FaCopy } from "react-icons/fa";
 
 // images
 import Dog1 from '../assets/image/dog1.webp'
@@ -42,7 +43,7 @@ const Welcome = ({ copyToClipboard }) => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -74,7 +75,7 @@ const Welcome = ({ copyToClipboard }) => {
                             x: -250
                         }}
 
-                        animate={{
+                        whileInView={{
                             opacity: 1,
                             x: 0,
                             transition: {
@@ -91,7 +92,7 @@ const Welcome = ({ copyToClipboard }) => {
                             x: -250
                         }}
 
-                        animate={{
+                        whileInView={{
                             opacity: 1,
                             x: 0,
                             transition: {
@@ -108,7 +109,7 @@ const Welcome = ({ copyToClipboard }) => {
                             x: -250
                         }}
 
-                        animate={{
+                        whileInView={{
                             opacity: 1,
                             x: 0,
                             transition: {
@@ -120,14 +121,14 @@ const Welcome = ({ copyToClipboard }) => {
                         className='text-slate-200 font-semibold text-center lg:text-left lg:w-96 text-xl'>
                         Byte came to be when someone asked Grok, 'What would you name your dog?' Grok answered, 'Byte.' Byte is Grok's digital dog and serves as a playful reference to the unit of digital information, as well as a nod to the AI's technological nature.
                     </motion.p>
-                    <motion.p
+                    <motion.div
 
                         initial={{
                             opacity: 0,
                             x: -250
                         }}
 
-                        animate={{
+                        whileInView={{
                             opacity: 1,
                             x: 0,
                             transition: {
@@ -136,16 +137,13 @@ const Welcome = ({ copyToClipboard }) => {
                             }
                         }}
 
-                        whileHover={{
-                            color: '#FFFFFF',
-                            cursor: 'pointer'
-                        }}
+                        className='flex items-center gap-3'>
 
-                        className='text-orange-500 font-pp-supply-mono text-xs lg:text-base'
-                        onClick={() => copyToClipboard('0xde342a3e269056fc3305f9e315f4c40d917ba521')}
-                    >
-                        CA:0XDE234A3E269056FC3305F9E315F4C40D917BA521
-                    </motion.p>
+                        <p className='text-orange-500 font-pp-supply-mono text-xs lg:text-base'>
+                            CA:0XDE234A3E269056FC3305F9E315F4C40D917BA521
+                        </p>
+                        <FaCopy onClick={() => copyToClipboard('0xde342a3e269056fc3305f9e315f4c40d917ba521')} className='inline-block text-orange-500 hover:cursor-pointer hover:text-slate-200 transition-colors duration-300' />
+                    </motion.div>
                 </div>
                 <motion.div
 
@@ -154,7 +152,7 @@ const Welcome = ({ copyToClipboard }) => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -178,32 +176,30 @@ const Welcome = ({ copyToClipboard }) => {
                 </motion.div>
             </div>
 
-            <AnimatePresence>
-                <motion.div
+            <motion.div
 
-                    id='hero-image'
-                    key={`hero-image-${currentHeroImage}`}
+                id='hero-image'
+                key={`hero-image-${currentHeroImage}`}
 
-                    initial={{
-                        opacity: 0,
-                        x: -250,
-                        rotate: 0
-                    }}
+                initial={{
+                    opacity: 0,
+                    x: -250,
+                    rotate: 0
+                }}
 
-                    animate={{
-                        opacity: 1,
-                        x: 0,
-                        rotate: 5,
-                        transition: {
-                            // duration: .5,
-                            type: 'spring'
-                        }
-                    }}
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    rotate: 5,
+                    transition: {
+                        // duration: .5,
+                        type: 'spring'
+                    }
+                }}
 
-                    className='w-full lg:w-1/2 md:h-[500px] h-[420px] xl:h-[500px] lg:mx-20' style={{ backgroundImage: `url(${heroImage[currentHeroImage]})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+                className='w-full lg:w-1/2 md:h-[500px] h-[420px] xl:h-[500px] lg:mx-20' style={{ backgroundImage: `url(${heroImage[currentHeroImage]})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
-                </motion.div>
-            </AnimatePresence>
+            </motion.div>
 
         </div>
     )

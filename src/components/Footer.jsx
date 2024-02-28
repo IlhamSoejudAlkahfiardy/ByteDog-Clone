@@ -9,6 +9,7 @@ import { FaBitcoin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import TweetComponent from './TweetComponent';
+import { FaCopy } from "react-icons/fa";
 
 
 const Footer = ({ copyToClipboard }) => {
@@ -37,11 +38,15 @@ const Footer = ({ copyToClipboard }) => {
             </div>
             <div className='w-full flex flex-col xl:flex-row justify-center xl:justify-between items-center gap-2'>
                 <p className='text-slate-200 font-pp-supply-mono-medium'>WE DONT BARK, WE BYTE</p>
-                <p
-                    className='text-orange-500 font-pp-supply-mono text-xs lg:text-sm hover:cursor-pointer hover:text-white transition-colors duration-300'
-                    onClick={() => copyToClipboard('0XDE342A3E269056FC3305F9E315f4C40D917BA521')}>
-                    CA: 0XDE342A3E269056FC3305F9E315f4C40D917BA521
-                </p>
+                <div className='flex items-center gap-3'>
+
+                    <p
+                        className='text-orange-500 font-pp-supply-mono text-xs lg:text-sm hover:cursor-pointer hover:text-white transition-colors duration-300'
+                        onClick={() => copyToClipboard('0XDE342A3E269056FC3305F9E315f4C40D917BA521')}>
+                        CA: 0XDE342A3E269056FC3305F9E315f4C40D917BA521
+                    </p>
+                    <FaCopy onClick={() => copyToClipboard('0xde342a3e269056fc3305f9e315f4c40d917ba521')} className='inline-block text-orange-500 hover:cursor-pointer hover:text-slate-200 transition-colors duration-300' />
+                </div>
             </div>
         </div>
     )

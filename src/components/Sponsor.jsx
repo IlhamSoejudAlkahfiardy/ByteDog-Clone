@@ -30,28 +30,13 @@ const sponsorImage = [
 const Sponsor = () => {
     return (
         <div className='w-full xl:w-1/2 mx-auto pb-10 flex flex-col gap-10'>
-            <motion.marquee
-
-                initial={{
-                    opacity: 0,
-                    x: -250
-                }}
-
-                animate={{
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                        duration: .5,
-                    }
-                }}
-
-                direction="left" scrollamount="10" className=' w-full overflow-hidden flex gap-5'>
+            <marquee direction="left" scrollamount="10" className=' w-full overflow-hidden flex gap-5'>
 
                 {sponsorImage.map((sponsor, index) => (
                     <SponsorImage key={index} image={sponsor.image} title={sponsor.title} />
                 ))}
 
-            </motion.marquee>
+            </marquee>
 
             <marquee direction="right" scrollamount="10" className=' w-full overflow-hidden flex gap-5'>
 

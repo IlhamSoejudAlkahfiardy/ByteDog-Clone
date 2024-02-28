@@ -13,7 +13,7 @@ const About = () => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -43,7 +43,7 @@ const About = () => {
                         x: -250
                     }}
 
-                    animate={{
+                    whileInView={{
                         opacity: 1,
                         x: 0,
                         transition: {
@@ -71,7 +71,7 @@ const About = () => {
                     rotate: 0
                 }}
 
-                animate={{
+                whileInView={{
                     opacity: 1,
                     x: 0,
                     rotate: 5,

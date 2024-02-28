@@ -11,7 +11,7 @@ const BuyNow = () => {
                     x: -250
                 }}
 
-                animate={{
+                whileInView={{
                     opacity: 1,
                     x: 0,
                     transition: {
@@ -42,7 +42,7 @@ const BuyNow = () => {
                     x: -250
                 }}
 
-                animate={{
+                whileInView={{
                     opacity: 1,
                     x: 0,
                     transition: {
@@ -63,7 +63,7 @@ const BuyNow = () => {
                     x: -250
                 }}
 
-                animate={{
+                whileInView={{
                     opacity: 1,
                     x: 0,
                     transition: {
@@ -82,7 +82,7 @@ const BuyNow = () => {
                     x: -250
                 }}
 
-                animate={{
+                whileInView={{
                     opacity: 1,
                     x: 0,
                     transition: {
