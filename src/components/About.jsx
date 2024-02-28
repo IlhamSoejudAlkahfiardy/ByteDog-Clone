@@ -20,6 +20,7 @@ const About = () => {
                     </p>
                 </div>
             </div>
+
             <div className='flex justify-center lg:justify-start items-center px-5 lg:px-20 xl:w-1/2'>
                 <TweetComponent id={'1754181698294575603'} />
             </div>

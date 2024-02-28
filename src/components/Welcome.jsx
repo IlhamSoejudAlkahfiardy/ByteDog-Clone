@@ -35,6 +35,7 @@ const Welcome = () => {
                         BUY $BYTE NOW</p>
                 </div>
             </div>
+
             <div className='w-full lg:w-1/2 md:h-[500px] h-[420px] xl:h-[500px] lg:mx-20' style={{ backgroundImage: `url(${Dog5})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
             </div>

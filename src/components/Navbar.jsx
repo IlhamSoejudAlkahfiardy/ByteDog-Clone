@@ -25,6 +25,7 @@ const Navbar = () => {
                 <RiOpenaiFill className='text-xl text-gray-500' />
                 <FaXTwitter className='text-xl text-gray-500' />
                 <FaTelegramPlane className='text-xl text-gray-500' />
+                
             </div>
         </div>
     )
