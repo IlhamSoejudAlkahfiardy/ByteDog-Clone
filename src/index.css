@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PP Supply Mono Regular";
+  src: url(./assets/font/Supply-Regular.otf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Supply Mono Light";
+  src: url(./assets/font/Supply-Light.otf);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Supply Mono Medium";
+  src: url(./assets/font/Supply-Medium.otf);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Supply Mono Bold";
+  src: url(./assets/font/Supply-Bold.otf);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Supply Mono UltraLight";
+  src: url(./assets/font/Supply-UltraLight.otf);
+  font-weight: 200;
+  font-style: normal;
+}
