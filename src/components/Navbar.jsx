@@ -9,7 +9,7 @@ import { RiOpenaiFill } from "react-icons/ri";
 
 const Navbar = () => {
     return (
-        <div className='w-full xl:w-500px xl:fixed py-8 flex flex-col lg:flex-row gap-5 justify-center lg:justify-between xl:justify-evenly items-center lg:px-20 xl:px-0'>
+        <div className='w-full z-50 xl:w-500px xl:fixed py-8 flex flex-col lg:flex-row gap-5 justify-center lg:justify-between xl:justify-evenly items-center lg:px-20 xl:px-0'>
             <div className='w-full lg:w-fit flex justify-center items-center'>
                 <img src={Logo} alt="" className='w-12 h-12' />
             </div>

@@ -1,7 +1,26 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { shuffle } from 'txt-shuffle';
 
 const BuyNow = () => {
+    const [state, setState] = useState({
+        animatedText: false,
+        shuffledText: '',
+        shuffledTextStatus: false
+    })
+
+    const { shuffledText, shuffledTextStatus } = state
+
+    useEffect(() => {
+
+        shuffle({
+            text: 'BUY NOW', fps: 60, duration: .5, animation: 'stay', onUpdate: (output) => {
+                setState((prevState) => ({ ...prevState, shuffledText: output }))
+            }
+        })
+
+    }, [shuffledTextStatus])
+
     return (
         <div id='buynow' className='container mx-auto w-full py-20 flex flex-col items-center gap-10'>
             <motion.div
@@ -19,7 +38,11 @@ const BuyNow = () => {
                     }
                 }}
 
-                className='bg-orange-500 w-fit h-fit'>
+                className='bg-orange-500 w-fit h-fit'
+
+                onMouseEnter={() => setState((prevState) => ({ ...prevState, shuffledTextStatus: true }))}
+                onMouseLeave={() => setState((prevState) => ({ ...prevState, shuffledTextStatus: false }))}
+            >
                 <div className='flex justify-center lg:justify-start items-center'>
                     <motion.p
 
@@ -31,7 +54,9 @@ const BuyNow = () => {
                             }
                         }}
 
-                        className='font-pp-supply-mono-light tracking-[.45em] text-sm text-orange-500 bg-yellow-950 rounded-lg px-5 py-2'>BUY NOW</motion.p>
+                        className='font-pp-supply-mono-light text-sm text-orange-500 bg-yellow-950 rounded-lg px-5 py-2'>
+                        <span>{shuffledText}</span>
+                    </motion.p>
                 </div>
             </motion.div>
 

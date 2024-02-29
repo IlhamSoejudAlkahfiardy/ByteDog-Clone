@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
+import { shuffle } from 'txt-shuffle';
 
 // icons
 import { FaArrowRight } from "react-icons/fa";
@@ -16,10 +17,13 @@ const Welcome = ({ copyToClipboard }) => {
     const heroImage = [Dog1, Dog2, Dog3, Dog4, Dog5]
 
     const [state, setState] = useState({
-        currentHeroImage: 0
+        currentHeroImage: 0,
+        animatedText: false,
+        shuffledText: '',
+        shuffledTextStatus: false
     })
 
-    const { currentHeroImage } = state
+    const { currentHeroImage, animatedText, shuffledText, shuffledTextStatus } = state
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -31,6 +35,17 @@ const Welcome = ({ copyToClipboard }) => {
 
         return () => clearInterval(intervalId);
     }, [heroImage.length])
+
+    useEffect(() => {
+
+
+        shuffle({
+            text: 'THE FIRST AI DOG', fps: 60, duration: .5, animation: 'stay', onUpdate: (output) => {
+                setState((prevState) => ({ ...prevState, shuffledText: output }))
+            }
+        })
+
+    }, [shuffledTextStatus])
 
     return (
         <div id='home' className='container mx-auto w-full xl:min-h-screen xl:pt-52 py-20 flex flex-col xl:flex-row xl:items-center gap-16'>
@@ -49,7 +64,11 @@ const Welcome = ({ copyToClipboard }) => {
                         }
                     }}
 
-                    className='bg-orange-500 w-fit h-fit'>
+                    className='bg-orange-500 w-fit h-fit hover:cursor-pointer'
+
+                    onMouseEnter={() => setState((prevState) => ({ ...prevState, shuffledTextStatus: true }))}
+                    onMouseLeave={() => setState((prevState) => ({ ...prevState, shuffledTextStatus: false }))}
+                >
                     <div className='flex justify-center lg:justify-start items-center'>
                         <motion.p
 
@@ -61,7 +80,10 @@ const Welcome = ({ copyToClipboard }) => {
                                 }
                             }}
 
-                            className='font-pp-supply-mono-light tracking-[.45em] text-sm text-orange-500 bg-yellow-950 rounded-lg px-5 py-2'>THE FIRST AI DOG
+                            className='font-pp-supply-mono-light text-sm tracking-[0.45em] text-orange-500 bg-yellow-950 rounded-lg px-5 py-2'>
+
+                            <span>{shuffledText}</span>
+
                         </motion.p>
                     </div>
                 </motion.div>
@@ -76,6 +98,7 @@ const Welcome = ({ copyToClipboard }) => {
                         whileInView={{
                             opacity: 1,
                             x: 0,
+
                             transition: {
                                 duration: .5,
                                 delay: 0.2
